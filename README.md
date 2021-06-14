@@ -78,7 +78,7 @@ oc  get secret openshift-gitops-cluster -n openshift-gitops -ojsonpath='{.data.a
 To configure your cluster to this repo run
 
 ```
-oc apply -k https://github.com/christianh814/openshift-cluster-config/cluster-config/config/overlays/default
+oc apply -k https://github.com/thoward-rh/openshift-cluster-config/cluster-config/config/overlays/default
 ```
 
 This will configure your server with the following.
@@ -116,7 +116,7 @@ ArgoCD Configurations
   * ArgoCD admins can see and sync all ArgoCD Applications
 * The `cluster-config` ArgoCD project has all "cluster wide" configurations
   * Can only be seen/synced by ArgoCD admins
-* The `pricelist` ArgoCD project has all appliaction components to run the [Pricelist](https://github.com/thoward-rh/openshift-cluster-config) application
+* The `pricelist` ArgoCD project has all appliaction components to run the [Pricelist](https://github.com/christianh814/openshift-cluster-config) application
   * Can be seen/synced by ArgoCD admins or ArgoCD users
 * Autosync is turned on
 
