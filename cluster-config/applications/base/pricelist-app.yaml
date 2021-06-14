@@ -9,7 +9,7 @@ spec:
   project: pricelist
   source:
     path: pricelist/
-    repoURL: https://github.com/christianh814/gitops-examples
+    repoURL: https://github.com/thoward-rh/gitops-examples
     targetRevision: master
   syncPolicy:
     automated:

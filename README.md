@@ -106,7 +106,7 @@ Application Deployments:
     * Frontend Web Application
     * Backend Database store
     * Job that creates database tables and the such
-  * The manifests for this app lives in my [gitops example repo](https://github.com/christianh814/gitops-examples)
+  * The manifests for this app lives in my [gitops example repo](https://github.com/thoward-rh/gitops-examples)
 
 ArgoCD Configurations
 * ArgoCD is integrated with the OpenShift oAuth
@@ -116,7 +116,7 @@ ArgoCD Configurations
   * ArgoCD admins can see and sync all ArgoCD Applications
 * The `cluster-config` ArgoCD project has all "cluster wide" configurations
   * Can only be seen/synced by ArgoCD admins
-* The `pricelist` ArgoCD project has all appliaction components to run the [Pricelist](https://github.com/christianh814/openshift-cluster-config) application
+* The `pricelist` ArgoCD project has all appliaction components to run the [Pricelist](https://github.com/thoward-rh/openshift-cluster-config) application
   * Can be seen/synced by ArgoCD admins or ArgoCD users
 * Autosync is turned on
 
