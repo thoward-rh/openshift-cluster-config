@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: mta-operator
+  namespace: mta
+  labels:
+    operators.coreos.com/mta-operator.mta: ''
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: mta-operator
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: windup-operator.0.0.5
