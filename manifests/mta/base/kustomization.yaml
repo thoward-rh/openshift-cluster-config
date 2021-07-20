@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
 - mta-subscription.yaml
+- namespace.yaml
