@@ -9,3 +9,4 @@ resources:
 - pricelist-app.yaml
 - sealed-secrets.yaml
 - mta.yaml
+- redis.yaml
