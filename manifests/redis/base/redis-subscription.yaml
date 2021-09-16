@@ -13,6 +13,4 @@ spec:
   sourceNamespace: openshift-marketplace
   startingCSV: redis-operator.v0.8.0
 
-
-
   
