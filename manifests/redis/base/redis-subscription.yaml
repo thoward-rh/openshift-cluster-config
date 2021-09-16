@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: redis-operator
-  namespace: redis
+  namespace: openshift-operators
   labels:
     operators.coreos.com/redis-operator.openshift-operators: ''
 spec:
