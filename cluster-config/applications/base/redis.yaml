@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-redis
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: cluster-config
+  source:
+    path: manifests/redis/base
+    repoURL: https://github.com/thoward-rh/openshift-cluster-config
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
