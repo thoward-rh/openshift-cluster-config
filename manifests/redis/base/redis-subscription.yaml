@@ -6,9 +6,9 @@ metadata:
   labels:
     operators.coreos.com/redis-operator.openshift-operators: ''
 spec:
-  channel: alpha
+  channel: stable
   installPlanApproval: Automatic
-  name: redis-operator
+  name: redis
   source: community-operators
   sourceNamespace: openshift-marketplace
   startingCSV: redis-operator.v0.8.0
