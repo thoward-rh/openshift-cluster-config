@@ -2,7 +2,7 @@ apiVersion: redis.redis.opstreelabs.in/v1beta1
 kind: RedisCluster
 metadata:
   name: redis-cluster
-  namespace: openshift-operators
+  namespace: redis
 spec:
   clusterSize: 3
   kubernetesConfig:
