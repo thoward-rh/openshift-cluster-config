@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
 - rabbitmq-operator.yaml
+- hello-cluster.yaml
