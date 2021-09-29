@@ -1,12 +1,11 @@
 # Openshift Cluster Config
 
-This repo sets up OpenShift with Day 2 thingys via Argo CD. It also uses Dex (unsupported) for Authentication with OpenShift.
+This repo sets up OpenShift with Day 2 things via Argo CD. It also uses keycloak for Authentication with OpenShift.
 
 
 ## Installing ArgoCD
 
-> :warning: This is based on OpenShift 4.7 deploying Argo CD v2.x using OpenShift GitOps v1.1.x.
-> When in doubt consult the [official docs](https://docs.openshift.com/container-platform/4.7/cicd/gitops/installing-openshift-gitops.html).
+> :warning: This is based on OpenShift 4.8 deploying Argo CD v2.x using OpenShift GitOps v1.1.x.
 
 First apply the `Subscription` manifest. Since this repo uses DEX, we'll need to enable that.
 
