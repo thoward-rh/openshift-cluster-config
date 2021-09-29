@@ -11,6 +11,7 @@ This repo sets up OpenShift with Day 2 thingys via Argo CD. It also uses Dex (un
 First apply the `Subscription` manifest. Since this repo uses DEX, we'll need to enable that.
 
 ```shell
+Or without DEX
 cat <<EOF | oc apply -f -
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -23,10 +24,6 @@ spec:
   name: openshift-gitops-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  config:
-    env:
-    - name: DISABLE_DEX
-      value: "false"
 EOF
 ```
 
@@ -42,11 +39,10 @@ Give the serviceAccount permission to admin the cluster.
 oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
 ```
 
-Patch the manifest in order to use Dex and set up the RBAC policy.
+Patch the manifest in order to use OpenShift SSO.
 
 ```shell
-oc patch argocd openshift-gitops -n openshift-gitops --type=merge \
--p='{"spec":{"config":{"env":[{"name":"DISABLE_DEX","value":"false"}]},"dex":{"openShiftOAuth":true,"version":"sha256:77bfea96e8d8f3e4197b9f6020c8f5dedbb701245c19afd69a15747ae4bf2804"},"rbac":{"defaultPolicy":"","policy":"g, system:cluster-admins, role:admin\ng, admins, role:admin\ng, developer, role:developer\ng, marketing, role:marketing\n","scopes":"[groups]"},"resourceCustomizations":"bitnami.com/SealedSecret:\n  health.lua: |\n    hs = {}\n    hs.status = \"Healthy\"\n    hs.message = \"Controller doesnt report resource status\"\n    return hs\nroute.openshift.io/Route:\n  ignoreDifferences: |\n    jsonPointers:\n    - /spec/host\n","server":{"insecure":true,"route":{"enabled":true,"tls":{"insecureEdgeTerminationPolicy":"Redirect","termination":"edge"}}}}}'
+oc patch argocd openshift-gitops -n openshift-gitops --type=merge -p='{"spec": {"sso": {"provider": "keycloak"}}}'
 ```
 
 Wait for the deployment rollout
@@ -67,7 +63,7 @@ To get the route
 oc get routes openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'
 ```
 
-To get the admin password
+To get the admin password, ( but you can also login using your openshift account )
 
 ```shell
 oc  get secret openshift-gitops-cluster -n openshift-gitops -ojsonpath='{.data.admin\.password}' | base64 -d ; echo
