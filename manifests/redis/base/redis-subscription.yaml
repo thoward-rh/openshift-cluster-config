@@ -11,6 +11,3 @@ spec:
   name: redis-operator
   source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: redis-operator.v0.8.0
-
-  
