@@ -10,7 +10,6 @@ This repo sets up OpenShift with Day 2 things via Argo CD. It also uses keycloak
 First apply the `Subscription` manifest. Since this repo uses DEX, we'll need to enable that.
 
 ```shell
-Or without DEX
 cat <<EOF | oc apply -f -
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
