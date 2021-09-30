@@ -7,7 +7,7 @@ This repo sets up OpenShift with Day 2 things via Argo CD. It also uses keycloak
 
 > :warning: This is based on OpenShift 4.8 deploying Argo CD v2.x using OpenShift GitOps v1.1.x.
 
-First apply the `Subscription` manifest. Since this repo uses DEX, we'll need to enable that.
+First apply the `Subscription` manifest.
 
 ```shell
 cat <<EOF | oc apply -f -
@@ -104,10 +104,10 @@ Application Deployments:
 
 ArgoCD Configurations
 * ArgoCD is integrated with the OpenShift oAuth
-* RBAC Policy
+<!-- * RBAC Policy
   * The `admins` OpenShift group is set up as ArgoCD admins
   * The `developer` OpenShift group is set up as ArgoCD users
-  * ArgoCD admins can see and sync all ArgoCD Applications
+  * ArgoCD admins can see and sync all ArgoCD Applications -->
 * The `cluster-config` ArgoCD project has all "cluster wide" configurations
   * Can only be seen/synced by ArgoCD admins
 * The `pricelist` ArgoCD project has all appliaction components to run the [Pricelist](https://github.com/thoward-rh/openshift-cluster-config) application
