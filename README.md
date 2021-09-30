@@ -119,6 +119,7 @@ ArgoCD Configurations
   * Can be seen/synced by ArgoCD admins or ArgoCD users
 * Autosync is turned on
 
+For the htpasswd (which you should replace in the htpasswd secret)
 Admin password is myadminpassword
 developer password is mydeveloperpassword
 marketing password is mymarketingpassword
