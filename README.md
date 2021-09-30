@@ -114,6 +114,9 @@ ArgoCD Configurations
   * Can be seen/synced by ArgoCD admins or ArgoCD users
 * Autosync is turned on
 
+Admin password is myadminpassword
+developer password is mydeveloperpassword
+marketing password is mymarketingpassword
 # How do I make changes
 
 You don't, it's GitOps!
