@@ -5,3 +5,4 @@ resources:
 - redis-subscription.yaml
 - redis-cluster.yaml
 - namespace.yaml
+- operatorgroup.yaml
