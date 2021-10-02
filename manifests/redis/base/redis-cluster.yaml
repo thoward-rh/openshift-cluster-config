@@ -3,6 +3,8 @@ kind: RedisCluster
 metadata:
   name: redis-cluster
   namespace: redis
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   clusterSize: 3
   kubernetesConfig:

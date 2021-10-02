@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
 - cluster-config-project.yaml
-# - pricelist-project.yaml
+- pricelist-project.yaml

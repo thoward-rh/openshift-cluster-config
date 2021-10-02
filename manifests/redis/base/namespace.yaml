@@ -3,5 +3,7 @@ kind: Namespace
 metadata:
   creationTimestamp: null
   name: redis
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec: {}
 status: {}
